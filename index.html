@@ -1,0 +1,5 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Image Processing Practical Portal</title><link rel="stylesheet" href="/static/style.css"></head><body>
+<header><div class="mini">IMAGE PROCESSING LAB</div><h1>Interactive Practical Portal</h1><p>Perform image processing operations using Python, Flask, OpenCV and NumPy. This version follows the practical modules shown in the uploaded post-lab report.</p></header>
+<div class="wrap"><div class="note"><b>11 practical modules are shown in the report screenshots.</b> The report text says “Include all 12 practicals,” but the listed portal modules are Practical 01–11.</div>
+<div class="grid">{% for pno,data in practicals.items() %}<div class="card"><div class="num">PRACTICAL {{ "%02d"|format(pno) }}</div><h3>{{data.title}}</h3><div style="margin:12px 0;color:#66758a">{{data.ops|length}} operations</div><a href="{{url_for('practical',pno=pno)}}">Open practical →</a></div>{% endfor %}</div></div>
+<footer>Python • Flask • OpenCV • NumPy</footer></body></html>
