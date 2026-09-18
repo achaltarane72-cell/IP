@@ -1,0 +1,16 @@
+
+:root{--ink:#102033;--muted:#66758a;--line:#dce3eb;--bg:#f6f8fb;--card:#fff;--accent:#14283f}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:var(--accent);color:#fff;padding:48px 6%;border-bottom-left-radius:28px;border-bottom-right-radius:28px}
+header .mini{letter-spacing:.18em;font-size:12px;opacity:.75;text-transform:uppercase}
+header h1{margin:10px 0 8px;font-size:34px}header p{margin:0;max-width:800px;line-height:1.6;color:#d9e4ef}
+.wrap{max-width:1180px;margin:30px auto;padding:0 20px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 8px 22px rgba(20,40,63,.06)}
+.num{font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.08em}.card h3{font-size:20px;margin:10px 0 14px;line-height:1.25}.card a{display:inline-block;text-decoration:none;color:#fff;background:var(--accent);padding:10px 16px;border-radius:10px;font-weight:700}
+.topbar{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:20px;flex-wrap:wrap}.back{text-decoration:none;color:var(--accent);font-weight:700}
+form{background:#fff;padding:22px;border:1px solid var(--line);border-radius:18px}.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+label{font-weight:700;font-size:14px;display:block;margin-bottom:7px}input,select,button{width:100%;padding:12px;border:1px solid #cfd8e3;border-radius:10px;font-size:14px;background:#fff}button{background:var(--accent);color:#fff;border:0;font-weight:700;cursor:pointer;margin-top:8px}
+.results{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px}.panel h4{margin:8px 10px 12px}.panel img{display:block;width:100%;max-height:520px;object-fit:contain;background:#f0f3f7;border-radius:12px}
+.note{margin:15px 0;padding:12px 14px;background:#eef3f8;border-left:4px solid var(--accent);border-radius:8px;color:#4a596b}
+footer{text-align:center;padding:30px;color:var(--muted);font-size:13px}
+@media(max-width:800px){.results{grid-template-columns:1fr}header h1{font-size:28px}}

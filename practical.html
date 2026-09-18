@@ -1,0 +1,16 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Practical {{pno}} - Image Processing</title><link rel="stylesheet" href="/static/style.css"></head><body>
+<div class="wrap"><div class="topbar"><a class="back" href="/">← All Practicals</a><div class="num">PRACTICAL {{ "%02d"|format(pno) }}</div></div>
+<h1>{{data.title}}</h1>
+<form method="post" enctype="multipart/form-data">
+<div class="row">
+<div><label>Input Image</label><input type="file" name="image" accept="image/*"></div>
+{% if pno in [1,8] %}<div><label>Second / Template Image</label><input type="file" name="image2" accept="image/*"></div>{% endif %}
+{% if pno==5 %}<div><label>Inpainting Mask</label><input type="file" name="mask" accept="image/*"></div>{% endif %}
+<div><label>Operation</label><select name="operation">{% for op in data.ops %}<option>{{op}}</option>{% endfor %}</select></div>
+<div><label>Roll Number for Output</label><input name="roll" value="CS24107"></div>
+</div><button type="submit">Process Image</button>
+</form>
+<div class="note">Tip: if no file is selected, the page uses a built-in sample image so you can test the practical immediately.</div>
+{% for m in get_flashed_messages() %}<div class="note">{{m}}</div>{% endfor %}
+{% if result %}<div class="note"><b>Processed successfully.</b> Operation: {{result.operation}}</div><div class="results"><div class="panel"><h4>INPUT IMAGE</h4><img src="{{url_for('static',filename='uploads/'+input_name)}}"></div><div class="panel"><h4>OUTPUT IMAGE</h4><img src="{{url_for('static',filename='outputs/'+output_name)}}"></div></div>{% endif %}
+</div><footer>Image Processing Lab • Python + Flask + OpenCV + NumPy</footer></body></html>
